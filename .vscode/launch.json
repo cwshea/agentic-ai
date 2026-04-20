@@ -1,0 +1,220 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Module 1: Demo (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module1_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_GCP": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 1: Demo Section",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module1_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["--section", "${input:module1Section}"],
+      "env": { "AGENT_MOCK_GCP": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 1: Demo (Live GCP)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module1_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["--live"],
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 1: HTTP Server (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/module1/app.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_GCP": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 1: Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["tests/test_tools.py", "-v"],
+      "env": { "AGENT_MOCK_GCP": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 2: Demo (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module2_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 2: Demo Section",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module2_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["--section", "${input:module2Section}"],
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 2: Demo (Live Repo)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module2_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["--repo", "${input:repoPath}"],
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 2: HTTP Server (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/module2/app.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 2: Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["tests/test_repo_tools.py", "-v"],
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 3: Terraform Demo (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module3_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 3: Terraform Demo Section",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demos/module3_demo.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["--section", "${input:module3Section}"],
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 3: Terraform HTTP Server (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/module3/app.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Module 3: Terraform Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["tests/test_module3_tools.py", "-v"],
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Routing Agent: Server",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/routing_agent/app.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Routing Agent: Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["tests/test_routing_agent.py", "-v"],
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "Evaluation: Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["tests/test_evaluation.py", "-v"],
+      "env": { "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    },
+    {
+      "name": "All Tests (Mock)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "args": ["tests/", "-v"],
+      "env": { "AGENT_MOCK_GCP": "true", "AGENT_MOCK_REPO": "true" },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Setup venv"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "module1Section",
+      "type": "promptString",
+      "description": "Module 1 demo section (1-6)",
+      "default": "1"
+    },
+    {
+      "id": "module2Section",
+      "type": "promptString",
+      "description": "Module 2 demo section (1-11)",
+      "default": "1"
+    },
+    {
+      "id": "module3Section",
+      "type": "promptString",
+      "description": "Module 3 demo section (1-11)",
+      "default": "1"
+    },
+    {
+      "id": "repoPath",
+      "type": "promptString",
+      "description": "Path to git repository to analyze",
+      "default": "/path/to/repo"
+    }
+  ]
+}

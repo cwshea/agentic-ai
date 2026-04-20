@@ -1,0 +1,8 @@
+llm:
+    provider: gemini
+    model: gemini-2.5-flash  # Fast model with high rate limits
+    temperature: 1  # 0.0 = deterministic, 1.0 = creative (default: 0.1 for accuracy)
+    timeout: 600.0  # 10 minutes for large protocol files
+
+secrets:
+    use_adc: true  # No API key required!

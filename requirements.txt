@@ -1,0 +1,45 @@
+# =============================================================================
+# GCP Infrastructure Agent — Multi-Module Dependencies
+# =============================================================================
+
+# ── Module 1: Google ADK Agent Framework ─────────────────────────────────────
+google-adk>=1.0.0                 # Google Agent Development Kit
+google-cloud-aiplatform>=1.40.0   # Vertex AI SDK
+google-genai>=1.0.0               # Google GenAI SDK (models)
+google-cloud-run>=0.10.0          # Cloud Run Admin API
+google-cloud-compute>=1.15.0      # Compute Engine API
+google-cloud-functions>=1.14.0    # Cloud Functions API
+google-api-python-client>=2.100.0 # Google API client (Cloud SQL Admin)
+google-auth>=2.25.0               # Google authentication
+
+# ── Module 2: LangChain Agent Framework ──────────────────────────────────────
+langchain>=0.1.0                  # LangChain core framework
+langchain-google-genai>=4.0.0     # Google GenAI integrations (ChatGoogleGenerativeAI)
+langchain-community>=0.0.20       # Community integrations
+langgraph>=0.0.20                 # State machine workflows
+langsmith>=0.0.80                 # Tracing and evaluation platform
+
+# ── Module 3: Terraform Generation & Evaluation ──────────────────────────────
+
+# ── Google Cloud SDK ──────────────────────────────────────────────────────────
+# (google-cloud-* libraries are included via google-adk and langchain-google-genai)
+
+# ── Rich console output (demo formatting) ────────────────────────────────────
+rich>=13.7.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0              # Load .env for local dev
+gitpython>=3.1.40                 # Git repository operations (Module 2)
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest>=8.0.0
+
+# ── ISV Partner Integrations (Module 3) ───────────────────────────────────────
+# Note: These are optional. The code will use mock mode if API keys are not provided.
+# Install these packages and set environment variables to enable real integrations:
+#   - PATRONUS_API_KEY for Patronus AI
+#   - DEEPCHECKS_API_KEY for Deepchecks (note: may not have free tier)
+#   - COMET_API_KEY for Comet ML
+patronus>=0.1.0                 # Patronus AI evaluation
+deepchecks>=0.18.0              # Deepchecks LLM testing
+comet-ml>=3.35.0                # Comet ML experiment tracking
