@@ -72,13 +72,13 @@ Generates Terraform infrastructure code for GCP from requirements with comprehen
 
 ```
 infra-agent/
-├── module1/                    # GCP Infrastructure Agent (Google ADK)
+├── module1/                   # GCP Infrastructure Agent (Google ADK)
 │   ├── agent.py               # Core agent with three layers
 │   ├── app.py                 # HTTP server / Cloud Run entrypoint
 │   ├── config/models.py       # Gemini + Model Garden configs
 │   └── tools/gcp_tools.py     # 5 read-only GCP tools
 │
-├── module2/                    # Repository Analysis Agent (LangChain)
+├── module2/                   # Repository Analysis Agent (LangChain)
 │   ├── agent.py               # LangChain agent factory
 │   ├── app.py                 # HTTP server entrypoint
 │   ├── config/models.py       # ChatGoogleGenerativeAI configuration
