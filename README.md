@@ -289,7 +289,7 @@ The agents are designed to work together in a multi-agent workflow:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  USER REQUEST: "Deploy this repository to the cloud"       │
+│  USER REQUEST: "Deploy this repository to the cloud"        │
 └─────────────────────────────────────────────────────────────┘
                            ↓
 ┌─────────────────────────────────────────────────────────────┐
