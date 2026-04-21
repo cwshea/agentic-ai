@@ -412,6 +412,8 @@ def main() -> None:
   🔜 Next: Module 2 — Agent Frameworks & Building Blocks
 """)
 
+    agent.close()
+
 
 if __name__ == "__main__":
     main()

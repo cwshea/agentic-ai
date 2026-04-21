@@ -164,6 +164,17 @@ class InfraAgent:
     def __call__(self, prompt: str) -> str:
         return self._loop.run_until_complete(self._invoke(prompt))
 
+    def close(self) -> None:
+        """Shut down pending async tasks and close the event loop."""
+        if self._loop.is_closed():
+            return
+        self._loop.run_until_complete(self._loop.shutdown_asyncgens())
+        self._loop.run_until_complete(self._loop.shutdown_default_executor())
+        self._loop.close()
+
+    def __del__(self) -> None:
+        self.close()
+
     async def _invoke(self, prompt: str) -> str:
         if self._session_id is None:
             session = await self._session_service.create_session(

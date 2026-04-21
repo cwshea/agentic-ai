@@ -161,6 +161,8 @@ def _run_server(host: str = "0.0.0.0", port: int = 8080) -> None:
         server.serve_forever()
     except KeyboardInterrupt:
         print("\n  Server stopped.")
+    finally:
+        _agent.close()
 
 
 # ---------------------------------------------------------------------------
