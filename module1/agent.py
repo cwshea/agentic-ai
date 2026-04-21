@@ -72,7 +72,7 @@ from google.genai import types
 # accesses GenerateContentResponse.text on a response that contains
 # function_call parts. This is an upstream issue in google-genai's
 # google_llm.py debug logging — silence it here.
-logging.getLogger("google.genai.types").setLevel(logging.ERROR)
+logging.getLogger("google_genai.types").setLevel(logging.ERROR)
 
 from module1.config.models import configure_vertex_ai, get_vertex_model, get_model_garden_model
 from module1.tools.gcp_tools import ALL_TOOLS
