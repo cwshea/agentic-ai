@@ -109,7 +109,7 @@ All tests run in mock mode — no GCP credentials or real repos needed. Mock dat
 
 ## Model Configuration
 
-All modules use Gemini via Vertex AI (configured in `gemini.yaml`, default `gemini-2.5-pro`). All model swaps are one line in the respective `config/models.py`.
+All modules use Gemini via Vertex AI (configured in `gemini.yaml`, default `gemini-2.5-flash`). All model swaps are one line in the respective `config/models.py`.
 
 ## Development
 

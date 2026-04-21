@@ -7,7 +7,7 @@ Configuration is loaded from gemini.yaml at the project root:
 
     llm:
         provider: gemini
-        model: gemini-2.5-pro
+        model: gemini-2.5-flash
         temperature: 1
         timeout: 600.0
     secrets:
@@ -19,7 +19,7 @@ Both are available through Google Cloud:
 
   1. GOOGLE — Gemini via Vertex AI (configured in gemini.yaml)
      Access : gcloud auth application-default login
-     Model  : gemini-2.5-pro (or any Gemini model)
+     Model  : gemini-2.5-flash (or any Gemini model)
      Why    : Primary reasoning engine — strong tool use and multi-step reasoning.
 
   2. MODEL GARDEN — Open models via Vertex AI Model Garden
@@ -67,7 +67,7 @@ _CONFIG = _load_config()
 _LLM = _CONFIG.get("llm", {})
 _SECRETS = _CONFIG.get("secrets", {})
 
-DEFAULT_MODEL = _LLM.get("model", "gemini-2.5-pro")
+DEFAULT_MODEL = _LLM.get("model", "gemini-2.5-flash")
 DEFAULT_TEMPERATURE = _LLM.get("temperature", 0.1)
 DEFAULT_TIMEOUT = _LLM.get("timeout", 600.0)
 USE_ADC = _SECRETS.get("use_adc", True)
@@ -101,7 +101,7 @@ def get_vertex_model(model_id: str | None = None) -> str:
     """
     Return the model ID string for use with Google ADK Agent.
 
-    Reads the default from gemini.yaml. Falls back to gemini-2.5-pro.
+    Reads the default from gemini.yaml. Falls back to gemini-2.5-flash.
 
     Prerequisites
     -------------

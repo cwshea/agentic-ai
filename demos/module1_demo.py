@@ -97,7 +97,7 @@ def section_1_three_layers() -> None:
   │  REASONING LAYER  (config/models.py)                           │
   │                                                                 │
   │    model_id = get_vertex_model()                               │
-  │        # "gemini-2.0-flash-001"                                │
+  │        # "gemini-2.5-flash"                                │
   │        # temperature=0.1  ← low = deterministic infra work     │
   │                                                                 │
   │    # One-line swap to Model Garden open model:                 │

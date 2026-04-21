@@ -29,7 +29,7 @@ def _load_config() -> dict:
 
 _CONFIG = _load_config()
 _LLM = _CONFIG.get("llm", {})
-DEFAULT_MODEL = _LLM.get("model", "gemini-2.5-pro")
+DEFAULT_MODEL = _LLM.get("model", "gemini-2.5-flash")
 
 
 def get_chat_vertex_model(

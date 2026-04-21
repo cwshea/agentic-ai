@@ -107,7 +107,7 @@ from google.adk.sessions import InMemorySessionService
 
 agent = Agent(
     name="gcp_infra_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     instruction=SYSTEM_PROMPT,
     tools=ALL_TOOLS,
 )

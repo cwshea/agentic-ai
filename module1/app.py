@@ -103,7 +103,7 @@ def _handle(payload: dict) -> dict:
         "result": str(response),
         "region": os.getenv("GCP_REGION", "us-central1"),
         "mock_mode": os.getenv("AGENT_MOCK_GCP", "false").lower() == "true",
-        "model": "model-garden" if _model_garden_endpoint else "gemini-2.0-flash",
+        "model": "model-garden" if _model_garden_endpoint else "gemini-2.5-flash",
     }
 
 

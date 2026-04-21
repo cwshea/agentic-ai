@@ -10,11 +10,11 @@ FRAMEWORK COMPARISON
 --------------------
 Module 1 (Google ADK):
     from google.adk.agents import Agent
-    agent = Agent(name="agent", model="gemini-2.5-pro", ...)
+    agent = Agent(name="agent", model="gemini-2.5-flash", ...)
 
 Module 2 (LangChain):
     from langchain_google_genai import ChatGoogleGenerativeAI
-    model = ChatGoogleGenerativeAI(model="gemini-2.5-pro", ...)
+    model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", ...)
 
 Both use Gemini via Vertex AI, but Module 1 uses Google ADK directly
 while Module 2 uses LangChain's wrapper which integrates with LCEL,
@@ -49,7 +49,7 @@ def _load_config() -> dict:
 _CONFIG = _load_config()
 _LLM = _CONFIG.get("llm", {})
 
-DEFAULT_MODEL = _LLM.get("model", "gemini-2.5-pro")
+DEFAULT_MODEL = _LLM.get("model", "gemini-2.5-flash")
 DEFAULT_TEMPERATURE = _LLM.get("temperature", 0.1)
 
 
