@@ -1,6 +1,6 @@
 # AI Agent Learning Series
 
-Hands-on demonstration code for the **AI Agent Learning**.
+Hands-on demonstration code for the **AI Agent Learning** Series.
 
 **Use case:** A Cloud Infrastructure Engineer is building an agentic system that can provision infrastructure, deploy and build microservices, and observe those services running in the cloud.
 
