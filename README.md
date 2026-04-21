@@ -267,7 +267,7 @@ With `AGENT_MOCK_GCP=true` the tools return realistic simulated data including:
 
 ## The Model-Agnostic Property
 
-The most important architectural property to highlight in the workshop:
+The most important architectural property to highlight:
 
 ```python
 # config/models.py — reads from gemini.yaml
