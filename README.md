@@ -192,7 +192,7 @@ python module2/app.py
 
 1. GCP project with Vertex AI API enabled
 2. Application Default Credentials: `gcloud auth application-default login`
-3. Model configuration is in `gemini.yaml` (defaults to `gemini-2.5-pro` with ADC)
+3. Model configuration is in `gemini.yaml` (defaults to `gemini-2.5-flash` with ADC)
 
 ```bash
 # Run against real GCP
