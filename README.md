@@ -245,19 +245,39 @@ gcloud run deploy gcp-infra-agent \
 
 ## Tools Reference
 
-All Module 1 tools are **read-only**. The only action path is `request_human_review`.
+### Module 1: GCP Infrastructure Tools (read-only)
 
-| Tool | Purpose | Slide Concept |
-|---|---|---|
-| `list_gcp_resources(service_type, region)` | Cloud Run / Compute / Cloud SQL / Functions listings | Grounding: agent sees current state |
-| `describe_resource(service_type, name, region)` | Detailed drill-down | Multi-step reasoning |
-| `check_resource_health(service_type, name, region)` | Structured health verdict | Observation |
-| `get_environment_summary(region)` | Cross-service overview | Data synthesis |
-| `request_human_review(...)` | Escalation ticket | Human-in-the-loop |
+| Tool | Purpose |
+|---|---|
+| `list_gcp_resources(service_type, region)` | Cloud Run / Compute / Cloud SQL / Functions listings |
+| `describe_resource(service_type, name, region)` | Detailed drill-down on a specific resource |
+| `check_resource_health(service_type, name, region)` | Structured health verdict |
+| `get_environment_summary(region)` | Cross-service overview |
+| `request_human_review(...)` | Human-in-the-loop escalation ticket |
+
+### Module 2: Repository Analysis Tools
+
+| Tool | Purpose |
+|---|---|
+| `scan_repository_structure(repo_path)` | Git-aware file tree scanning |
+| `read_file_content(repo_path, file_path)` | Read dependency/config files |
+| `detect_applications(repo_path, file_tree)` | Identify apps in monorepos |
+| `analyze_dependencies(repo_path, app_path, dep_file)` | Parse dependency files |
+| `map_gcp_services(dependencies)` | Map dependencies to GCP services |
+
+### Module 3: Terraform Generation Tools
+
+| Tool | Purpose |
+|---|---|
+| `analyze_infrastructure_requirements(requirements)` | Parse Module 2 output |
+| `generate_terraform_module(module_type, parameters)` | Generate Terraform HCL for GCP |
+| `validate_terraform_syntax(terraform_code)` | Validate HCL syntax and best practices |
+| `list_available_resources(service)` | Browse GCP Terraform resources |
+| `generate_terraform_tests(module_name, module_type)` | Generate test configurations |
 
 ### Mock data
 
-With `AGENT_MOCK_GCP=true` the tools return realistic simulated data including:
+With `AGENT_MOCK_GCP=true` the Module 1 tools return realistic simulated data including:
 - **`api-gateway-svc`** → healthy (3/3 instances running on Cloud Run)
 - **`notification-svc`** → degraded (1/2 instances, container crash) ← triggers HITL
 - **`reporting-mysql`** → degraded (Cloud SQL, no HA, no failover)

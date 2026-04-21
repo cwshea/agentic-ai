@@ -192,6 +192,19 @@ AGENT_MOCK_REPO=true pytest tests/test_repo_tools.py::test_scan_repository_struc
 pytest tests/test_repo_tools.py::test_full_analysis_workflow -v
 ```
 
+## Tool Comparison: Google ADK vs LangChain
+
+| Aspect | Google ADK (Module 1) | LangChain (Module 2) |
+|--------|----------------------|---------------------|
+| Definition | Plain function with type hints | `@tool` decorator |
+| Parameters | Inferred from signature | Inferred from signature |
+| Description | Docstring | Docstring |
+| Return Type | Any (dict or str) | String (JSON) |
+| Registration | Pass list to `Agent()` | Pass list to `create_react_agent()` |
+| Invocation | Automatic via ADK Runner | Automatic via LangGraph |
+
+Both frameworks use the same pattern: define tools as functions, collect them in a list, and pass to the agent. The agent autonomously decides which tools to call via the ReAct (Think → Act → Observe) loop.
+
 ## Demo Sections
 
 Run `AGENT_MOCK_REPO=true python demos/module2_demo.py --section N`:
@@ -199,11 +212,16 @@ Run `AGENT_MOCK_REPO=true python demos/module2_demo.py --section N`:
 | # | Title | Key Concept |
 |---|-------|-------------|
 | 1 | Framework comparison | LangChain vs Google ADK architecture |
-| 2 | Repository scan | File structure analysis |
-| 3 | Application detection | Multi-app/monorepo identification |
-| 4 | Dependency analysis | Stack and GCP service mapping |
-| 5 | LangSmith tracing | Observability and debugging |
-| 6 | Full workflow | Complete analysis pipeline |
+| 2 | Agent identity | System prompts and agent persona |
+| 3 | Context management | Conversation history across frameworks |
+| 4 | Chains | Composable workflows with LCEL |
+| 5 | Tools in LangChain | Tool definition, registration, ReAct loop |
+| 6 | Tools comparison | LangChain vs Google ADK tool patterns |
+| 7 | Repository scan | File structure analysis |
+| 8 | Application detection | Multi-app/monorepo identification |
+| 9 | Dependency analysis | Stack and GCP service mapping |
+| 10 | LangSmith tracing | Observability and debugging |
+| 11 | Full workflow | Complete analysis pipeline |
 
 ## Next Steps
 
