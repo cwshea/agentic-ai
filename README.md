@@ -218,7 +218,7 @@ python demos/module1_demo.py --live --model-garden
 
 1. GCP project with Vertex AI API enabled
 2. Application Default Credentials: `gcloud auth application-default login`
-3. Model configuration in `gemini.yaml` (defaults to `gemini-2.5-pro`)
+3. Model configuration in `gemini.yaml` (defaults to `gemini-2.5-flash`)
 
 ---
 
